@@ -1,0 +1,74 @@
+.sec1{
+    height:100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    text-align: center;
+    
+}
+
+article{
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    padding: 1rem;
+    align-items: flex-end  ;
+    color: white;
+    font-size: 50%;
+    transition: 1s;
+
+}
+
+article:hover{
+    flex: 3;
+    font-size: 150%;
+
+}
+
+.colosseum{
+    background-image: url(img/colosseum.jpg);
+    font-size: large;
+}
+
+.pantheon{
+    background-image: url(img/pantheon.jpg);
+    font-size: large;
+}
+
+.palatine{
+    background-image: url(img/palatine\ hill.jpg);
+    font-size: large;
+    
+}
+
+.Welcome{
+    background-image: url(img/roma-imperiale-uno-dei.jpg);
+    font-size: large;
+}
+
+.colosseume{
+    background-image: url(img/colosseum1.jpg);
+    font-size: large;
+}
+
+.Vatican{
+    background-image: url(img/Vatican\ Museums.jpg);
+    font-size: large;
+    
+}
+
+.Antico{
+    background-image: url(img/antico.jpg);
+    font-size: large;
+}
+
+.Fritti{
+    background-image: url(img/Cicciotto-o-milionario-jpeg-580-scaled.jpg);
+    font-size: large;
+}
+
+.Florida{
+    background-image: url(img/na\ Vorta\ -\ Pasta\ e\ Vino\ Via\ Florida.png);
+    font-size: large;
+    
+}

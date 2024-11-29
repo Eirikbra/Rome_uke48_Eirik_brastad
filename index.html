@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velkommen til Rome</title>
+<link rel="stylesheet" href="styles.css">
+<script>
+        // Funksjon som reduserer headeren og skjuler bildet
+        function collapseHeader() {
+            const header = document.querySelector('header'); // Finner header-elementet
+            const image = document.querySelector('header img'); // Finner bildet i header
+ 
+            header.classList.add('small-header'); // Legger til klassen for redusert header
+            image.classList.add('hidden-image'); // Skjuler bildet
+        }
+ 
+        // Funksjon som gjenoppretter headerens fulle høyde og viser bildet
+        function restoreHeader() {
+            const header = document.querySelector('header'); // Finner header-elementet
+            const image = document.querySelector('header img'); // Finner bildet i header
+            const main = document.querySelector('main'); // Finner hovedinnholdet
+ 
+            header.classList.remove('small-header'); // Fjerner klassen for redusert header
+            image.classList.remove('hidden-image'); // Viser bildet igjen
+ 
+            main.innerHTML = ''; // Resetter hovedinnholdet
+        }
+ 
+       // Funksjon som laster inn en ny side i hoveddelen
+       function loadPage(url) {
+            collapseHeader(); // Reduserer headeren
+            fetch(url) // Henter siden fra den oppgitte URL-en
+                .then(response => {
+                    if (!response.ok) throw new Error('Page not found'); // Håndterer feil
+                    return response.text();
+                })
+                .then(data => {
+                    document.querySelector('main').innerHTML = data; // Setter innholdet i hoveddelen
+                })
+                .catch(error => {
+                    console.error('Error loading page:', error); // Logger feil
+                    document.querySelector('main').innerHTML = '<p>Feil ved lasting av siden. Prøv igjen.</p>'; // Viser feilmelding
+                });
+        }
+</script>
+</head>
+<body>
+ 
+<header class="background">
+<img src="" alt="" > <!-- en code some holder alt sammen vet ikke hvordan  --> 
+<div>
+
+</div>
+<p style="font-size:150px;">ROME</p> 
+</header>
+ 
+<div class="container">
+<aside>
+<!-- Navigasjonsmeny -->
+<ul>
+<li><a class="a" href="#" onclick="restoreHeader()">Home</a></li> <!-- Gjenoppretter headeren -->
+<li><a class="a" href="#" onclick="loadPage('Sev.html')">Severdigheter</a></li> <!-- Laster ny side -->
+<li><a class="a" href="#" onclick="loadPage('Mat.html')">Mat og drikke</a></li> <!-- ==//== -->
+<li><a class="a" href="#" onclick="loadPage('aktiv.html')">Aktiviteter</a></li> <!-- ==//== -->
+<li><a class="a" href="#" onclick="loadPage('FAQ_rome.html')">FAQ-seksjon</a></li> <!-- ==//== -->
+</ul>
+</aside>
+<main class="main">
+<p>Klikk på linkene for å se hvordan headeren reduseres i størrelse.</p> <!-- Standardinnhold -->
+</main>
+</div>
+ 
+<footer>
+    Footer <!-- Innhold for bunnteksten -->
+</footer>
+ 
+</body>
+</html>
